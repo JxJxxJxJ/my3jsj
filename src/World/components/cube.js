@@ -31,13 +31,14 @@ function createCube() {
 
   const cube = new Mesh(geometry, material);
 
+  // Rotacion inicial 
   cube.rotation.set(-0.5, -0.1, 0.1);
 
   const radiansPerSecond = MathUtils.degToRad(30);
 
-  // this method will be called once per frame
+  // Este metodo sera llamado una vez por frame
   cube.tick = (delta) => {
-    // increase the cube's rotation each frame
+    // Roto el cubo en cada dimension un poquito en cada frame
     cube.rotation.z += radiansPerSecond * delta;
     cube.rotation.x += radiansPerSecond * delta;
     cube.rotation.y += radiansPerSecond * delta;

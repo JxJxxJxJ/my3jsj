@@ -1,13 +1,13 @@
 import { World } from './World/World.js';
 
 function main() {
-  // Get a reference to the container element
+  // Guardo referencia del elemento HTML #scene-container
   const container = document.querySelector('#scene-container');
 
-  // create a new world
+  // Crear un nuevo mundo
   const world = new World(container);
 
-  // start the animation loop
+  // Iniciar la animacion
   world.start();
 }
 

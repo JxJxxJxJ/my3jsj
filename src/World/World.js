@@ -29,21 +29,28 @@ class World {
     // Y los a;ado a la escena
     scene.add(cube, light);
 
+    // Agrego el cubo al arreglo de objetos animados
     loop.updatables.push(cube);
 
     // Para que al reajustar la ventana el cubo se haga chiquito y grande
     const resizer = new Resizer(container, camera, renderer);
+
+    // Solo util si no tengo animaciones (porque la animacion ya va a estar es-
+    // pameando renders)
+    // resizer.onResize = () => { this.render() };
   }
 
+  // Metodo para dibujar un solo cuadro
   render() {
-    // Dibuja un solo cuadro
     renderer.render(scene, camera);
   }
 
+  // Metodo para iniciar la animacion desde world
   start() {
     loop.start();
   }
 
+  // Metodo para detener la animacion desde world
   stop() {
     loop.stop();
   }
